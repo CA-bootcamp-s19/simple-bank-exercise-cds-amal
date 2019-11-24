@@ -45,7 +45,7 @@ contract('SimpleBank', function(accounts) {
   it("should log a deposit event when a deposit is made", async() => {
     await instance.enroll({from: alice})
     const result  = await instance.deposit({from: alice, value: deposit})
-    
+
     const expectedEventResult = {accountAddress: alice, amount: deposit}
 
     const logAccountAddress = result.logs[0].args.accountAddress
